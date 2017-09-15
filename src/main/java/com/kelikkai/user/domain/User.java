@@ -91,4 +91,11 @@ public class User
 	{
 		this.active = active;
 	}
+	@Override
+	public String toString()
+	{
+		return "User [userId=" + userId + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
+				+ ", mobileNumber=" + mobileNumber + ", countryCode=" + countryCode + ", birthDate=" + birthDate
+				+ ", gender=" + gender + ", active=" + active + "]";
+	}
 }

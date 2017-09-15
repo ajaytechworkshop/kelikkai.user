@@ -1,5 +1,7 @@
 package com.kelikkai.user.controller;
 
+import java.util.List;
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -59,5 +61,18 @@ public class UserController
 		log.info("UserController getUser -->"+user);
 		
 		return user;
+	}
+	
+	@ApiOperation(value="The API gets all the users registred in kelikkai")
+	@RequestMapping(value=Constants.URL_ALLUSER,method=RequestMethod.GET)
+	public List<User> getAllUsers()
+	{
+		log.info("--> UserController getAllUsers..");
+		
+		List<User> users = userService.getAllUsers();
+		
+		log.info("UserController getAllUsers -->"+users);
+		
+		return users;
 	}
 }

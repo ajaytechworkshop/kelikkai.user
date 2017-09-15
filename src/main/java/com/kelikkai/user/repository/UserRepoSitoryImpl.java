@@ -1,5 +1,8 @@
 package com.kelikkai.user.repository;
 
+
+import java.util.List;
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
@@ -31,6 +34,12 @@ public class UserRepoSitoryImpl implements UserRepository
 	public User getUser(String userId)
 	{
 		return mongoOps.findById(userId,User.class);
+	}
+
+	@Override
+	public List<User> getAllUsers()
+	{
+		return mongoOps.findAll(User.class);
 	}
 	
 	

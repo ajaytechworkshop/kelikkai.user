@@ -8,5 +8,6 @@ public class Constants
 	public static final String URL_APPROOT = "/user";
 	public static final String URL_REGISTERUSER = "/register";
 	public static final String URL_UPDATEUSER = "/update";
+	public static final String URL_ALLUSER = "/all";
 	
 }

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.spi.DocumentationType;
@@ -33,10 +34,9 @@ public class SwaggerConfig
 	@Bean
 	public Docket api()
 	{
-		return new Docket(DocumentationType.SWAGGER_2).groupName("user").apiInfo(apiInfo())
-				.enable(Boolean.valueOf(swaggerFlag)).select()
-				.apis(RequestHandlerSelectors.basePackage("com.kelikkai.user"))
-				.paths(regex("/.*")).build();
+		return new Docket(DocumentationType.SWAGGER_2).select()
+				.apis(RequestHandlerSelectors.any())
+				.paths(PathSelectors.any()).build();
 	}
 
 	/**
